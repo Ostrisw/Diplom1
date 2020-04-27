@@ -613,56 +613,11 @@ namespace Dip
 
         private void cmbKalendarniyGod_TextChanged(object sender, EventArgs e)
         {
-            
-                switch (cmbKalendarniyGod.Text)
-                {
-
-                    case "2020":
-                        {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                        }
-                    case "2021":
-                        {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                        }
-                case "2022":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
-                case "2023":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
-                case "2024":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
-                case "2025":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
-
+            if (cmbKalendarniyGod.Text != "")
+            {
+                dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.God_zakupki.ToString() == cmbKalendarniyGod.Text).ToList();
             }
         }
-        int a;
         private void cmbKafedra_TextChanged(object sender, EventArgs e)
         {
             switch (cmbKafedra.Text)
