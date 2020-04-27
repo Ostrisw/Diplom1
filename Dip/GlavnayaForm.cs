@@ -662,7 +662,7 @@ namespace Dip
 
             }
         }
-
+        int a;
         private void cmbKafedra_TextChanged(object sender, EventArgs e)
         {
             switch (cmbKafedra.Text)
