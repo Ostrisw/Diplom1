@@ -18,9 +18,11 @@ namespace Dip
         public Glavnayaform()
         {
             InitializeComponent();
+            //Для комбобоксов отрисовка содержимого из БД
+            cmbKafedra.DataSource = DBObject.Entites.Kafedra.ToList().Select(c => c.Name).Distinct().ToList();
+            cmbKalendarniyGod.DataSource = DBObject.Entites.Zakupka.ToList().Select(c => c.God_zakupki).Distinct().ToList();
             dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.ToList();
-            //dataGridView1.Columns["Kalendarniy_god"].Visible = false;
-            //dataGridView1.Columns["Name_kafedra"].Visible = false;
+
             Starfall();
         }
         public void Starfall()
@@ -54,21 +56,6 @@ namespace Dip
                 // Путь до шаблона документа
                 string source =Environment.CurrentDirectory+"//kibox.docx";
 
-                //openFileDialog1.Filter = "*.docx|документы docx";
-                //DialogResult result = openFileDialog1.ShowDialog();
-
-                //try
-                //{
-                //    if (result == DialogResult.OK)
-                //    {
-                //        source = openFileDialog1.FileName;
-                //    }
-                //    if (result == DialogResult.Cancel)
-                //    {
-
-                //    }
-                //}
-                //catch { MessageBox.Show("Откройте файл формата .doc", "Формат не соответствует требуемому", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 // Открываем
                 doc = app.Documents.Open(source);
                 doc.Activate();
@@ -89,15 +76,6 @@ namespace Dip
                     //Добавляем таблицу и получаем объект wordtable      || +2 т.к. считается каждая строка в шаблоне (шапка и подвал)
                     Word.Table wordtable = doc.Tables.Add(wRange, dgvSpisokZakupok.Rows.Count + 2, 10,
                                       ref defaultTableBehavior, ref autoFitBehavior);
-                    //Word.Range wordcellrange = doc.Tables[1].Cell(1, 1).Range;
-                    //for (int m = 0; m < wordtable.Rows.Count; m++)
-                    //    for (int n = 0; n < wordtable.Columns.Count; n++)
-                    //    {
-                    //        wordcellrange = wordtable.Cell(m + 1, n + 1).Range;
-                    //        wordcellrange.Text = "Ячейка" + Convert.ToString(m + 1) + " "
-                    //                                 + Convert.ToString(n + 1);
-                    //    }
-
 
                     //Верхние колонки
                     Word.Range wordcellrange = doc.Tables[1].Cell(1, 1).Range;
@@ -108,26 +86,7 @@ namespace Dip
                         Word.Range rana = doc.Tables[1].Cell(i+2, 1).Range;
                         rana.Text = Convert.ToString(i+1);
                     }
-                    //Word.Range ran = doc.Tables[1].Cell(2, 1).Range;
-                    //ran.Text = "1";
-                    //Word.Range ra = doc.Tables[1].Cell(3, 1).Range;
-                    //ra.Text = "2";
-                    //Word.Range rami = doc.Tables[1].Cell(4, 1).Range;
-                    //rami.Text = "3";
-                    //Word.Range ram = doc.Tables[1].Cell(5, 1).Range;
-                    //ram.Text = "4";
-                    //Word.Range raml = doc.Tables[1].Cell(6, 1).Range;
-                    //raml.Text = "5";
-                    //Word.Range ramli = doc.Tables[1].Cell(7, 1).Range;
-                    //ramli.Text = "6";
-                    //Word.Range ramjo = doc.Tables[1].Cell(8, 1).Range;
-                    //ramjo.Text = "7";
-                    //Word.Range ramo = doc.Tables[1].Cell(9, 1).Range;
-                    //ramo.Text = "8";
-                    //Word.Range rama = doc.Tables[1].Cell(10, 1).Range;
-                    //rama.Text = "9";
-                    //Word.Range ramf = doc.Tables[1].Cell(11, 1).Range;
-                    //ramf.Text = "10";
+
                     Word.Range rams = doc.Tables[1].Cell(g+2, 1).Range;
                     rams.Text = Convert.ToString(g + 1);
                     //Названия первой строки всех стоблцов
@@ -173,17 +132,6 @@ namespace Dip
                        Word.WdParagraphAlignment.wdAlignParagraphCenter;
                     }
 
-                    // Word.Range wordcellranh = doc.Tables[1].Cell(3, 2).Range;
-                    // wordcellranh.Text = Convert.ToString(dgvSpisokZakupok[1, 1].Value);
-                    // wordcellranh.ParagraphFormat.Alignment =
-                    //Word.WdParagraphAlignment.wdAlignParagraphCenter;
-
-                    //     Word.Range wordcellran = doc.Tables[1].Cell(4, 2).Range;
-                    //     wordcellran.Text = Convert.ToString(dgvSpisokZakupok[1, 2].Value);
-                    //     wordcellran.ParagraphFormat.Alignment =
-                    //    Word.WdParagraphAlignment.wdAlignParagraphCenter;
-
-
                     //КБК 
                     for (int i = 0; i < g; i++)
                     {
@@ -192,15 +140,6 @@ namespace Dip
                         wordcellra.ParagraphFormat.Alignment =
                        Word.WdParagraphAlignment.wdAlignParagraphCenter;
                     }
-                    // Word.Range wordcellr = doc.Tables[1].Cell(3, 3).Range;
-                    // wordcellr.Text = Convert.ToString(dgvSpisokZakupok[2, 1].Value);
-                    // wordcellr.ParagraphFormat.Alignment =
-                    //Word.WdParagraphAlignment.wdAlignParagraphCenter;
-
-                    // Word.Range wordcell = doc.Tables[1].Cell(4, 3).Range;
-                    // wordcell.Text = Convert.ToString(dgvSpisokZakupok[2, 2].Value);
-                    // wordcell.ParagraphFormat.Alignment =
-                    //Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
                     //КВР
                     for (int i = 0; i < g; i++)
@@ -238,17 +177,6 @@ namespace Dip
                        Word.WdParagraphAlignment.wdAlignParagraphLeft;
                         wordcera.Font.Size = 9;
                     }
-                    // Word.Range wordcellre = doc.Tables[1].Cell(3, 7).Range;
-                    // wordcellre.Text = Convert.ToString(dgvSpisokZakupok[6, 1].Value);
-                    // wordcellre.ParagraphFormat.Alignment =
-                    //Word.WdParagraphAlignment.wdAlignParagraphLeft;
-                    // wordcellre.Font.Size = 9;
-
-                    // Word.Range wordcellrer = doc.Tables[1].Cell(4, 7).Range;
-                    // wordcellrer.Text = Convert.ToString(dgvSpisokZakupok[6, 2].Value);
-                    // wordcellrer.ParagraphFormat.Alignment =
-                    //Word.WdParagraphAlignment.wdAlignParagraphLeft;
-                    // wordcellrer.Font.Size = 9;
 
                     //Минимальные требования
                     for (int i = 0; i < g; i++)
@@ -488,19 +416,6 @@ namespace Dip
                     //------------------------------------------------------------
                 }
 
-
-                /// Закрываем документ и сохраняем изменения
-                ///doc.Close();
-                ///doc = null;
-                //---------Открытие нового---------------
-                //Word.Document doc = app.Documents.Add();
-                //doc.Paragraphs[1].Range.Text = this.textBox1.Text;
-
-                //app.Visible = true;
-
-
-
-
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Title = "Сохранить файл";
 
@@ -522,10 +437,6 @@ namespace Dip
                 doc.SaveAs(sfd.FileName);
 
                 app.Visible = true;
-
-                //doc.Close(ref falseObj, ref missingObj, ref missingObj);
-                //app.Quit(ref missingObj, ref missingObj, ref missingObj);
-
             }
             
             catch (Exception error)
@@ -552,13 +463,7 @@ namespace Dip
             {
                 Zakupka zakupka = (Zakupka)dgvSpisokZakupok.Rows[e.RowIndex].DataBoundItem;
                 FormAddAndEditZakupka form = new FormAddAndEditZakupka(zakupka);
-               // dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.ToList();
                 form.ShowDialog();
-                //DateTime date = DateTime.Today;
-                //if (date.Year != zakupka.God_zakupki)
-                //{
-                //    ;
-                //}
             }
             catch
             {
@@ -610,77 +515,19 @@ namespace Dip
                 MessageBox.Show("Ошибка!", "Что то пошло не так!");
             }
         }
-
+        int a;
         private void cmbKalendarniyGod_TextChanged(object sender, EventArgs e)
         {
-            
-                switch (cmbKalendarniyGod.Text)
-                {
-
-                    case "2020":
-                        {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                        }
-                    case "2021":
-                        {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                        }
-                case "2022":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
-                case "2023":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
-                case "2024":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
-                case "2025":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                            .Where(t => t.God_zakupki.ToString().Contains(cmbKalendarniyGod.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
-
+            if (cmbKalendarniyGod.Text != "")
+            {
+                dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.God_zakupki.ToString() == cmbKalendarniyGod.Text).ToList();
             }
         }
-        int a;
         private void cmbKafedra_TextChanged(object sender, EventArgs e)
         {
-            switch (cmbKafedra.Text)
+            if (cmbKafedra.Text != "")
             {
-                case "ФиПМ":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                           .Where(t => t.Kafedra.ToString().Contains(cmbKafedra.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
-                case "КиТП":
-                    {
-                        dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka
-                           .Where(t => t.Kafedra.ToString().Contains(cmbKafedra.Text)).ToList();
-                        Starfall();
-                        break;
-                    }
+                dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.Kafedra.ToString() == cmbKafedra.Text).ToList();
             }
         }
     }
