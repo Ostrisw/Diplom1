@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MyModelContainer" CdmEntityContainer="MyEntities">
+    <EntitySetMapping Name="Kafedra">
+      <EntityTypeMapping TypeName="MyModel.Kafedra">
+        <MappingFragment StoreEntitySet="Kafedra">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kafedra_Jurnal">
+      <EntityTypeMapping TypeName="MyModel.Kafedra_Jurnal">
+        <MappingFragment StoreEntitySet="Kafedra_Jurnal">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TipDeystviya" ColumnName="TipDeystviya" />
+          <ScalarProperty Name="TimeChange" ColumnName="TimeChange" />
+          <ScalarProperty Name="KtoIzmenil" ColumnName="KtoIzmenil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kbk">
+      <EntityTypeMapping TypeName="MyModel.Kbk">
+        <MappingFragment StoreEntitySet="Kbk">
+          <ScalarProperty Name="Number_kbk" ColumnName="Number_kbk" />
+          <ScalarProperty Name="Rasshifrovka_kbk" ColumnName="Rasshifrovka_kbk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kbk_Jurnal">
+      <EntityTypeMapping TypeName="MyModel.Kbk_Jurnal">
+        <MappingFragment StoreEntitySet="Kbk_Jurnal">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number_kbk" ColumnName="Number_kbk" />
+          <ScalarProperty Name="Rasshifrovka_kbk" ColumnName="Rasshifrovka_kbk" />
+          <ScalarProperty Name="TipDeystviya" ColumnName="TipDeystviya" />
+          <ScalarProperty Name="TimeChange" ColumnName="TimeChange" />
+          <ScalarProperty Name="KtoIzmenil" ColumnName="KtoIzmenil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kvr">
+      <EntityTypeMapping TypeName="MyModel.Kvr">
+        <MappingFragment StoreEntitySet="Kvr">
+          <ScalarProperty Name="Number_kvr" ColumnName="Number_kvr" />
+          <ScalarProperty Name="Rasshifrovka_kvr" ColumnName="Rasshifrovka_kvr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kvr_Jurnal">
+      <EntityTypeMapping TypeName="MyModel.Kvr_Jurnal">
+        <MappingFragment StoreEntitySet="Kvr_Jurnal">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number_kvr" ColumnName="Number_kvr" />
+          <ScalarProperty Name="Rasshifrovka_kvr" ColumnName="Rasshifrovka_kvr" />
+          <ScalarProperty Name="TipDeystviya" ColumnName="TipDeystviya" />
+          <ScalarProperty Name="TimeChange" ColumnName="TimeChange" />
+          <ScalarProperty Name="KtoIzmenil" ColumnName="KtoIzmenil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sroc_zakupki">
+      <EntityTypeMapping TypeName="MyModel.Sroc_zakupki">
+        <MappingFragment StoreEntitySet="Sroc_zakupki">
+          <ScalarProperty Name="Srokzakupki" ColumnName="Srokzakupki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sroc_zakupki_Jurnal">
+      <EntityTypeMapping TypeName="MyModel.Sroc_zakupki_Jurnal">
+        <MappingFragment StoreEntitySet="Sroc_zakupki_Jurnal">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Srokzakupki" ColumnName="Srokzakupki" />
+          <ScalarProperty Name="TipDeystviya" ColumnName="TipDeystviya" />
+          <ScalarProperty Name="TimeChange" ColumnName="TimeChange" />
+          <ScalarProperty Name="KtoIzmenil" ColumnName="KtoIzmenil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zakupka">
+      <EntityTypeMapping TypeName="MyModel.Zakupka">
+        <MappingFragment StoreEntitySet="Zakupka">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="KBK" ColumnName="KBK" />
+          <ScalarProperty Name="KVR" ColumnName="KVR" />
+          <ScalarProperty Name="Total_sum_rub" ColumnName="Total_sum_rub" />
+          <ScalarProperty Name="Sum_rub" ColumnName="Sum_rub" />
+          <ScalarProperty Name="Deshifrovka_rashodov" ColumnName="Deshifrovka_rashodov" />
+          <ScalarProperty Name="Min_trebovaniya" ColumnName="Min_trebovaniya" />
+          <ScalarProperty Name="Kolvo_edinic" ColumnName="Kolvo_edinic" />
+          <ScalarProperty Name="Srok_zakupki" ColumnName="Srok_zakupki" />
+          <ScalarProperty Name="God_zakupki" ColumnName="God_zakupki" />
+          <ScalarProperty Name="Kafedra" ColumnName="Kafedra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zakupka_Jurnal">
+      <EntityTypeMapping TypeName="MyModel.Zakupka_Jurnal">
+        <MappingFragment StoreEntitySet="Zakupka_Jurnal">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Zakupki" ColumnName="Id_Zakupki" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="KBK" ColumnName="KBK" />
+          <ScalarProperty Name="KVR" ColumnName="KVR" />
+          <ScalarProperty Name="Total_sum_rub" ColumnName="Total_sum_rub" />
+          <ScalarProperty Name="Sum_rub" ColumnName="Sum_rub" />
+          <ScalarProperty Name="Deshifrovka_rashodov" ColumnName="Deshifrovka_rashodov" />
+          <ScalarProperty Name="Min_trebovaniya" ColumnName="Min_trebovaniya" />
+          <ScalarProperty Name="Kolvo_edinic" ColumnName="Kolvo_edinic" />
+          <ScalarProperty Name="Srok_zakupki" ColumnName="Srok_zakupki" />
+          <ScalarProperty Name="God_zakupki" ColumnName="God_zakupki" />
+          <ScalarProperty Name="Kafedra" ColumnName="Kafedra" />
+          <ScalarProperty Name="TipDeystviya" ColumnName="TipDeystviya" />
+          <ScalarProperty Name="TimeChange" ColumnName="TimeChange" />
+          <ScalarProperty Name="KtoIzmenil" ColumnName="KtoIzmenil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

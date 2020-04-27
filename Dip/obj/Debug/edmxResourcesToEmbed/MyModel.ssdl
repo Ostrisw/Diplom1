@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище MyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kafedra">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kafedra_Jurnal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipDeystviya" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeChange" Type="datetime" Nullable="false" />
+    <Property Name="KtoIzmenil" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kbk">
+    <Key>
+      <PropertyRef Name="Number_kbk" />
+    </Key>
+    <Property Name="Number_kbk" Type="int" Nullable="false" />
+    <Property Name="Rasshifrovka_kbk" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kbk_Jurnal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number_kbk" Type="int" Nullable="false" />
+    <Property Name="Rasshifrovka_kbk" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="TipDeystviya" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeChange" Type="datetime" Nullable="false" />
+    <Property Name="KtoIzmenil" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kvr">
+    <Key>
+      <PropertyRef Name="Number_kvr" />
+    </Key>
+    <Property Name="Number_kvr" Type="int" Nullable="false" />
+    <Property Name="Rasshifrovka_kvr" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kvr_Jurnal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number_kvr" Type="int" Nullable="false" />
+    <Property Name="Rasshifrovka_kvr" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="TipDeystviya" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeChange" Type="datetime" Nullable="false" />
+    <Property Name="KtoIzmenil" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sroc_zakupki">
+    <Key>
+      <PropertyRef Name="Srokzakupki" />
+    </Key>
+    <Property Name="Srokzakupki" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sroc_zakupki_Jurnal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Srokzakupki" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipDeystviya" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeChange" Type="datetime" Nullable="false" />
+    <Property Name="KtoIzmenil" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zakupka">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="KBK" Type="int" Nullable="false" />
+    <Property Name="KVR" Type="int" Nullable="false" />
+    <Property Name="Total_sum_rub" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Sum_rub" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Deshifrovka_rashodov" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Min_trebovaniya" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Kolvo_edinic" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Srok_zakupki" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="God_zakupki" Type="int" Nullable="false" />
+    <Property Name="Kafedra" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zakupka_Jurnal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Zakupki" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="KBK" Type="int" Nullable="false" />
+    <Property Name="KVR" Type="int" Nullable="false" />
+    <Property Name="Total_sum_rub" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Sum_rub" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Deshifrovka_rashodov" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Min_trebovaniya" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Kolvo_edinic" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Srok_zakupki" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="God_zakupki" Type="int" Nullable="false" />
+    <Property Name="Kafedra" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipDeystviya" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeChange" Type="datetime" Nullable="false" />
+    <Property Name="KtoIzmenil" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Zakupka__Kafedra__7132C993">
+    <End Role="Kafedra" Type="Self.Kafedra" Multiplicity="1" />
+    <End Role="Zakupka" Type="Self.Zakupka" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kafedra">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Zakupka">
+        <PropertyRef Name="Kafedra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Zakupka__KBK__6E565CE8">
+    <End Role="Kbk" Type="Self.Kbk" Multiplicity="1" />
+    <End Role="Zakupka" Type="Self.Zakupka" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kbk">
+        <PropertyRef Name="Number_kbk" />
+      </Principal>
+      <Dependent Role="Zakupka">
+        <PropertyRef Name="KBK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Zakupka__KVR__6F4A8121">
+    <End Role="Kvr" Type="Self.Kvr" Multiplicity="1" />
+    <End Role="Zakupka" Type="Self.Zakupka" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kvr">
+        <PropertyRef Name="Number_kvr" />
+      </Principal>
+      <Dependent Role="Zakupka">
+        <PropertyRef Name="KVR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Zakupka__Srok_za__703EA55A">
+    <End Role="Sroc_zakupki" Type="Self.Sroc_zakupki" Multiplicity="1" />
+    <End Role="Zakupka" Type="Self.Zakupka" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sroc_zakupki">
+        <PropertyRef Name="Srokzakupki" />
+      </Principal>
+      <Dependent Role="Zakupka">
+        <PropertyRef Name="Srok_zakupki" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище MyModelContainer">
+    <EntitySet Name="Kafedra" EntityType="Self.Kafedra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kafedra_Jurnal" EntityType="Self.Kafedra_Jurnal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kbk" EntityType="Self.Kbk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kbk_Jurnal" EntityType="Self.Kbk_Jurnal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kvr" EntityType="Self.Kvr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kvr_Jurnal" EntityType="Self.Kvr_Jurnal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sroc_zakupki" EntityType="Self.Sroc_zakupki" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sroc_zakupki_Jurnal" EntityType="Self.Sroc_zakupki_Jurnal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zakupka" EntityType="Self.Zakupka" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zakupka_Jurnal" EntityType="Self.Zakupka_Jurnal" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Zakupka__Kafedra__7132C993" Association="Self.FK__Zakupka__Kafedra__7132C993">
+      <End Role="Kafedra" EntitySet="Kafedra" />
+      <End Role="Zakupka" EntitySet="Zakupka" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Zakupka__KBK__6E565CE8" Association="Self.FK__Zakupka__KBK__6E565CE8">
+      <End Role="Kbk" EntitySet="Kbk" />
+      <End Role="Zakupka" EntitySet="Zakupka" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Zakupka__KVR__6F4A8121" Association="Self.FK__Zakupka__KVR__6F4A8121">
+      <End Role="Kvr" EntitySet="Kvr" />
+      <End Role="Zakupka" EntitySet="Zakupka" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Zakupka__Srok_za__703EA55A" Association="Self.FK__Zakupka__Srok_za__703EA55A">
+      <End Role="Sroc_zakupki" EntitySet="Sroc_zakupki" />
+      <End Role="Zakupka" EntitySet="Zakupka" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

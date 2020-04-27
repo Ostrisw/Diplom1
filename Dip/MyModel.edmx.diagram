@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c7ec7923e81848b681ac74097bab909a" Name="Diagram1">
+        <EntityTypeShape EntityType="MyModel.Kafedra" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kafedra_Jurnal" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kbk" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kbk_Jurnal" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kvr" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kvr_Jurnal" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Sroc_zakupki" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Sroc_zakupki_Jurnal" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Zakupka" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Zakupka_Jurnal" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="MyModel.FK__Zakupka__Kafedra__7132C993" ManuallyRouted="false" />
+        <AssociationConnector Association="MyModel.FK__Zakupka__KBK__6E565CE8" ManuallyRouted="false" />
+        <AssociationConnector Association="MyModel.FK__Zakupka__KVR__6F4A8121" ManuallyRouted="false" />
+        <AssociationConnector Association="MyModel.FK__Zakupka__Srok_za__703EA55A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
