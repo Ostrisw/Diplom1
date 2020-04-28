@@ -515,7 +515,7 @@ namespace Dip
                 MessageBox.Show("Ошибка!", "Что то пошло не так!");
             }
         }
-        int a;
+
         private void cmbKalendarniyGod_TextChanged(object sender, EventArgs e)
         {
             if (cmbKalendarniyGod.Text != "")

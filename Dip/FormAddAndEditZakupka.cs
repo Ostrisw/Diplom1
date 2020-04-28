@@ -69,8 +69,8 @@ namespace Dip
                 F2_cmbBoxSrokZakupki.Enabled = false;
                 F2_cmbBoxGodZakupki.Enabled = false;
                 F2_TxtBoxKafedra.ReadOnly = true;
-                F2_btnOpenDgv.Enabled = false;
             }
+                //F2_cmbBoxKafedra.DataSource = DBObject.Entites.Kafedra.ToList().Select(c => c.Name).Distinct().ToList();
         }
 
         private void F2_delbtn_Click(object sender, EventArgs e)
@@ -85,12 +85,12 @@ namespace Dip
 
         private void F2_savebtn_Click(object sender, EventArgs e)
         {
-            if (DBObject.Entites.Zakupka.Where(t => t.Id == MyZakupka.Id).Count() == 0)
-            {
-                DBObject.Entites.Zakupka.Add(MyZakupka);
-                DBObject.Entites.SaveChanges();
-            }
-            Close();
+                if (DBObject.Entites.Zakupka.Where(t => t.Id == MyZakupka.Id).Count() == 0)
+                {
+                    DBObject.Entites.Zakupka.Add(MyZakupka);
+                    DBObject.Entites.SaveChanges();
+                }
+                Close();
         }
 
         private void F2_closebtn_Click(object sender, EventArgs e)
@@ -146,24 +146,21 @@ namespace Dip
             MyZakupka.Srok_zakupki = F2_cmbBoxSrokZakupki.Text;
         }
 
-        private void F2_TxtBoxKafedra_TextChanged(object sender, EventArgs e)
-        {
-            MyZakupka.Kafedra = F2_TxtBoxKafedra.Text;
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void F2_cmbBoxGodZakupki_SelectedIndexChanged(object sender, EventArgs e)
         {
             MyZakupka.God_zakupki = Convert.ToInt32(F2_cmbBoxGodZakupki.Text);
         }
 
-
-        //Открытие третьей формы
-        private void F2_btnOpenDgv_Click(object sender, EventArgs e)
+        private void F2_TxtBoxKafedra_TextChanged(object sender, EventArgs e)
         {
-            Select_Kafedra_Form forms = new Select_Kafedra_Form();
-            forms.ShowDialog();
+            MyZakupka.Kafedra = F2_TxtBoxKafedra.Text;
+            if (F2_TxtBoxKafedra.Text != "")
+            {
+                dataGridView1.DataSource = DBObject.Entites.Kafedra.Where(c => c.Name.ToString() == F2_TxtBoxKafedra.Text).ToList();
+            }
+            dataGridView1.Columns["Zakupka"].Visible = false;
+            dataGridView1.Columns["Name"].HeaderText = "Кафедра:";
         }
-
     }
     
 }
