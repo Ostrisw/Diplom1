@@ -161,7 +161,6 @@ namespace Dip
             dataGridView1.Columns["Zakupka"].Visible = false;
             dataGridView1.Columns["Name"].HeaderText = "Кафедра:";
         }
-        int a;
     }
     
 }

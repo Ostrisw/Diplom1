@@ -18,6 +18,14 @@ namespace Dip
         public Glavnayaform()
         {
             InitializeComponent();
+            cmbAllSelect.Visible = false;
+            string p = SystemInformation.UserName;
+            string s = Environment.MachineName;
+            string n = s +"/"+ p;    
+            if (n == "DESKTOP-19IDELH/Ser")
+            {
+                cmbAllSelect.Visible = true;
+            }
             //Для комбобоксов отрисовка содержимого из БД
             cmbKafedra.DataSource = DBObject.Entites.Kafedra.ToList().Select(c => c.Name).Distinct().ToList();
             cmbKalendarniyGod.DataSource = DBObject.Entites.Zakupka.ToList().Select(c => c.God_zakupki).Distinct().ToList();
@@ -528,6 +536,30 @@ namespace Dip
             if (cmbKafedra.Text != "")
             {
                 dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.Kafedra.ToString() == cmbKafedra.Text).ToList();
+            }
+        }
+
+        private void cmbAllSelect_TextChanged_1(object sender, EventArgs e)
+        {
+            if (cmbAllSelect.Text == "Kafedra_Jurnal")
+            {
+                dgvSpisokZakupok.DataSource = DBObject.Entites.Kafedra_Jurnal.ToList();
+            }
+            if (cmbAllSelect.Text == "Kbk_Jurnal")
+            {
+                dgvSpisokZakupok.DataSource = DBObject.Entites.Kbk_Jurnal.ToList();
+            }
+            if (cmbAllSelect.Text == "Kvr_Jurnal")
+            {
+                dgvSpisokZakupok.DataSource = DBObject.Entites.Kvr_Jurnal.ToList();
+            }
+            if (cmbAllSelect.Text == "Sroc_Zakupki_Jurnal")
+            {
+                dgvSpisokZakupok.DataSource = DBObject.Entites.Sroc_zakupki_Jurnal.ToList();
+            }
+            if (cmbAllSelect.Text == "Zakupka_Jurnal")
+            {
+                dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka_Jurnal.ToList();
             }
         }
     }

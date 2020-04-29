@@ -50,6 +50,7 @@
             this.startToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.cmbAllSelect = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpisokZakupok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipDataSet)).BeginInit();
@@ -228,6 +229,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // cmbAllSelect
+            // 
+            this.cmbAllSelect.FormattingEnabled = true;
+            this.cmbAllSelect.Items.AddRange(new object[] {
+            "Kafedra_Jurnal",
+            "Kbk_Jurnal",
+            "Kvr_Jurnal",
+            "Sroc_Zakupki_Jurnal",
+            "Zakupka_Jurnal"});
+            this.cmbAllSelect.Location = new System.Drawing.Point(1025, 49);
+            this.cmbAllSelect.Name = "cmbAllSelect";
+            this.cmbAllSelect.Size = new System.Drawing.Size(176, 21);
+            this.cmbAllSelect.TabIndex = 30;
+            this.cmbAllSelect.TextChanged += new System.EventHandler(this.cmbAllSelect_TextChanged_1);
+            // 
             // Glavnayaform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +251,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1213, 523);
+            this.Controls.Add(this.cmbAllSelect);
             this.Controls.Add(this.toolStripMenu);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -276,6 +293,7 @@
         private System.Windows.Forms.ToolStripButton startToolStripButton;
         private System.Windows.Forms.ToolStrip toolStripMenu;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ComboBox cmbAllSelect;
     }
 }
 
