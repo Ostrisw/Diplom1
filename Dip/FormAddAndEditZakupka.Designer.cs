@@ -54,11 +54,11 @@
             this.F2_cmbBoxKBK = new System.Windows.Forms.ComboBox();
             this.F2_cmbBoxKVR = new System.Windows.Forms.ComboBox();
             this.F2_cmbBoxSrokZakupki = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvKafedra = new System.Windows.Forms.DataGridView();
             this.F2_TxtBoxKafedra = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownTotalSum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownSum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKafedra)).BeginInit();
             this.SuspendLayout();
             // 
             // F2_closebtn
@@ -316,6 +316,7 @@
             // 
             // F2_cmbBoxSrokZakupki
             // 
+            this.F2_cmbBoxSrokZakupki.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.F2_cmbBoxSrokZakupki.FormattingEnabled = true;
             this.F2_cmbBoxSrokZakupki.Items.AddRange(new object[] {
             "Январь",
@@ -337,15 +338,15 @@
             this.F2_cmbBoxSrokZakupki.TabIndex = 34;
             this.F2_cmbBoxSrokZakupki.SelectedIndexChanged += new System.EventHandler(this.F2_cmbBoxSrokZakupki_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // dgvKafedra
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(298, 392);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(198, 50);
-            this.dataGridView1.TabIndex = 36;
+            this.dgvKafedra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKafedra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKafedra.Location = new System.Drawing.Point(298, 392);
+            this.dgvKafedra.Name = "dgvKafedra";
+            this.dgvKafedra.ReadOnly = true;
+            this.dgvKafedra.Size = new System.Drawing.Size(198, 50);
+            this.dgvKafedra.TabIndex = 36;
             // 
             // F2_TxtBoxKafedra
             // 
@@ -361,7 +362,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 489);
             this.Controls.Add(this.F2_TxtBoxKafedra);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvKafedra);
             this.Controls.Add(this.F2_cmbBoxSrokZakupki);
             this.Controls.Add(this.F2_cmbBoxKVR);
             this.Controls.Add(this.F2_cmbBoxKBK);
@@ -389,10 +390,10 @@
             this.Controls.Add(this.F2_delbtn);
             this.Controls.Add(this.F2_closebtn);
             this.Name = "FormAddAndEditZakupka";
-            this.Text = "FormAddAndEditZakupka";
+            this.Text = "Добавление и редактирование";
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownTotalSum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownSum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKafedra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,7 +427,7 @@
         private System.Windows.Forms.ComboBox F2_cmbBoxKBK;
         private System.Windows.Forms.ComboBox F2_cmbBoxKVR;
         private System.Windows.Forms.ComboBox F2_cmbBoxSrokZakupki;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvKafedra;
         private System.Windows.Forms.TextBox F2_TxtBoxKafedra;
     }
 }

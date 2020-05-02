@@ -85,12 +85,16 @@ namespace Dip
 
         private void F2_savebtn_Click(object sender, EventArgs e)
         {
+            try
+            {
                 if (DBObject.Entites.Zakupka.Where(t => t.Id == MyZakupka.Id).Count() == 0)
                 {
                     DBObject.Entites.Zakupka.Add(MyZakupka);
                     DBObject.Entites.SaveChanges();
                 }
                 Close();
+            }
+            catch { MessageBox.Show("Ошибка", "Некорректные данные!"); }
         }
 
         private void F2_closebtn_Click(object sender, EventArgs e)
@@ -156,10 +160,10 @@ namespace Dip
             MyZakupka.Kafedra = F2_TxtBoxKafedra.Text;
             if (F2_TxtBoxKafedra.Text != "")
             {
-                dataGridView1.DataSource = DBObject.Entites.Kafedra.Where(c => c.Name.ToString() == F2_TxtBoxKafedra.Text).ToList();
+                dgvKafedra.DataSource = DBObject.Entites.Kafedra.Where(c => c.Name.ToString() == F2_TxtBoxKafedra.Text).ToList();
             }
-            dataGridView1.Columns["Zakupka"].Visible = false;
-            dataGridView1.Columns["Name"].HeaderText = "Кафедра:";
+            dgvKafedra.Columns["Zakupka"].Visible = false;
+            dgvKafedra.Columns["Name"].HeaderText = "Кафедра:";
         }
     }
     

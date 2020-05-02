@@ -51,6 +51,7 @@
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cmbAllSelect = new System.Windows.Forms.ComboBox();
+            this.lblJurnal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpisokZakupok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipDataSet)).BeginInit();
@@ -181,7 +182,7 @@
             this.UpdatetoolStripButton.Size = new System.Drawing.Size(24, 24);
             this.UpdatetoolStripButton.Text = "toolStripButton1";
             this.UpdatetoolStripButton.ToolTipText = "Обновить";
-            this.UpdatetoolStripButton.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.UpdatetoolStripButton.Click += new System.EventHandler(this.UpdatetoolStripButton1_Click);
             // 
             // toolStripSeparator6
             // 
@@ -244,6 +245,15 @@
             this.cmbAllSelect.TabIndex = 30;
             this.cmbAllSelect.TextChanged += new System.EventHandler(this.cmbAllSelect_TextChanged_1);
             // 
+            // lblJurnal
+            // 
+            this.lblJurnal.AutoSize = true;
+            this.lblJurnal.Location = new System.Drawing.Point(969, 52);
+            this.lblJurnal.Name = "lblJurnal";
+            this.lblJurnal.Size = new System.Drawing.Size(50, 13);
+            this.lblJurnal.TabIndex = 31;
+            this.lblJurnal.Text = "Журнал:";
+            // 
             // Glavnayaform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,6 +261,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1213, 523);
+            this.Controls.Add(this.lblJurnal);
             this.Controls.Add(this.cmbAllSelect);
             this.Controls.Add(this.toolStripMenu);
             this.Controls.Add(this.label10);
@@ -294,6 +305,7 @@
         private System.Windows.Forms.ToolStrip toolStripMenu;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ComboBox cmbAllSelect;
+        private System.Windows.Forms.Label lblJurnal;
     }
 }
 

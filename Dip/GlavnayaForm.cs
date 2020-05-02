@@ -19,12 +19,14 @@ namespace Dip
         {
             InitializeComponent();
             cmbAllSelect.Visible = false;
+            lblJurnal.Visible = false;
             string p = SystemInformation.UserName;
             string s = Environment.MachineName;
-            string n = s +"/"+ p;    
+            string n = s + "/" + p;
             if (n == "DESKTOP-19IDELH/Ser")
             {
                 cmbAllSelect.Visible = true;
+                lblJurnal.Visible = true;
             }
             //Для комбобоксов отрисовка содержимого из БД
             cmbKafedra.DataSource = DBObject.Entites.Kafedra.ToList().Select(c => c.Name).Distinct().ToList();
@@ -55,6 +57,8 @@ namespace Dip
 
         private void startToolStripButton_Click(object sender, EventArgs e)
         {
+            if (dgvSpisokZakupok.DataSource != DBObject.Entites.Zakupka.ToList())
+            { dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.ToList();Starfall(); }
             // Создаём объект документа
             Word.Document doc = null;
             try
@@ -506,7 +510,7 @@ namespace Dip
             }
         }
         //Кнопка обновить
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void UpdatetoolStripButton1_Click(object sender, EventArgs e)
         {
             try
             {
