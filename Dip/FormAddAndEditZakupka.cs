@@ -85,16 +85,25 @@ namespace Dip
 
         private void F2_savebtn_Click(object sender, EventArgs e)
         {
-            try
+            DateTime dates = DateTime.Today;
+            if (Convert.ToInt32(F2_cmbBoxGodZakupki.Text) < dates.Year) { MessageBox.Show("Год меньше текущего!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else
             {
-                if (DBObject.Entites.Zakupka.Where(t => t.Id == MyZakupka.Id).Count() == 0)
+                if (F2_NumUpDownTotalSum.Value != F2_NumUpDownSum.Value) { MessageBox.Show("Поля <Сумма> и <Сумма итого> должны быть одинаковы!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                else
                 {
-                    DBObject.Entites.Zakupka.Add(MyZakupka);
-                    DBObject.Entites.SaveChanges();
+                    try
+                    {
+                        if (DBObject.Entites.Zakupka.Where(t => t.Id == MyZakupka.Id).Count() == 0)
+                        {
+                            DBObject.Entites.Zakupka.Add(MyZakupka);
+                            DBObject.Entites.SaveChanges();
+                        }
+                        Close();
+                    }
+                    catch { MessageBox.Show("Некорректные данные! Заполните все строки!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
-                Close();
             }
-            catch { MessageBox.Show("Ошибка", "Некорректные данные!"); }
         }
 
         private void F2_closebtn_Click(object sender, EventArgs e)
@@ -164,6 +173,15 @@ namespace Dip
             }
             dgvKafedra.Columns["Zakupka"].Visible = false;
             dgvKafedra.Columns["Name"].HeaderText = "Кафедра:";
+        }
+
+        private void F2_TxtBoxKafedra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsLetter(ch) && !char.IsControl(ch))
+            {
+                e.Handled = true;
+            }
         }
     }
     

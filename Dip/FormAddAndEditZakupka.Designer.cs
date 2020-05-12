@@ -256,6 +256,7 @@
             // 
             this.F2_cmbBoxGodZakupki.FormattingEnabled = true;
             this.F2_cmbBoxGodZakupki.Items.AddRange(new object[] {
+            "2019",
             "2020",
             "2021",
             "2022",
@@ -355,6 +356,7 @@
             this.F2_TxtBoxKafedra.Size = new System.Drawing.Size(140, 20);
             this.F2_TxtBoxKafedra.TabIndex = 37;
             this.F2_TxtBoxKafedra.TextChanged += new System.EventHandler(this.F2_TxtBoxKafedra_TextChanged);
+            this.F2_TxtBoxKafedra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.F2_TxtBoxKafedra_KeyPress);
             // 
             // FormAddAndEditZakupka
             // 

@@ -36,8 +36,8 @@
             this.reportTableAdapter = new Dip.DipDataSetTableAdapters.ReportTableAdapter();
             this.cmbKafedra = new System.Windows.Forms.ComboBox();
             this.cmbKalendarniyGod = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblKafedra = new System.Windows.Forms.Label();
+            this.lblKalendarniyGod = new System.Windows.Forms.Label();
             this.addToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -112,23 +112,23 @@
             this.cmbKalendarniyGod.TabIndex = 26;
             this.cmbKalendarniyGod.TextChanged += new System.EventHandler(this.cmbKalendarniyGod_TextChanged);
             // 
-            // label9
+            // lblKafedra
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(563, 52);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Кафедра:";
+            this.lblKafedra.AutoSize = true;
+            this.lblKafedra.Location = new System.Drawing.Point(563, 52);
+            this.lblKafedra.Name = "lblKafedra";
+            this.lblKafedra.Size = new System.Drawing.Size(55, 13);
+            this.lblKafedra.TabIndex = 27;
+            this.lblKafedra.Text = "Кафедра:";
             // 
-            // label10
+            // lblKalendarniyGod
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(304, 52);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Календарный год:";
+            this.lblKalendarniyGod.AutoSize = true;
+            this.lblKalendarniyGod.Location = new System.Drawing.Point(304, 52);
+            this.lblKalendarniyGod.Name = "lblKalendarniyGod";
+            this.lblKalendarniyGod.Size = new System.Drawing.Size(99, 13);
+            this.lblKalendarniyGod.TabIndex = 28;
+            this.lblKalendarniyGod.Text = "Календарный год:";
             // 
             // addToolStripButton
             // 
@@ -160,7 +160,7 @@
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(24, 24);
-            this.saveToolStripButton.Text = "&Сохранить";
+            this.saveToolStripButton.Text = "&Сохранить в БД";
             this.saveToolStripButton.Click += new System.EventHandler(this.сохранитьToolStripButton_Click);
             // 
             // toolStripSeparator3
@@ -264,8 +264,8 @@
             this.Controls.Add(this.lblJurnal);
             this.Controls.Add(this.cmbAllSelect);
             this.Controls.Add(this.toolStripMenu);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblKalendarniyGod);
+            this.Controls.Add(this.lblKafedra);
             this.Controls.Add(this.cmbKalendarniyGod);
             this.Controls.Add(this.cmbKafedra);
             this.Controls.Add(this.dgvSpisokZakupok);
@@ -290,8 +290,8 @@
         private DipDataSetTableAdapters.ReportTableAdapter reportTableAdapter;
         private System.Windows.Forms.ComboBox cmbKafedra;
         private System.Windows.Forms.ComboBox cmbKalendarniyGod;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblKafedra;
+        private System.Windows.Forms.Label lblKalendarniyGod;
         private System.Windows.Forms.ToolStripButton addToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

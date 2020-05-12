@@ -57,8 +57,6 @@ namespace Dip
 
         private void startToolStripButton_Click(object sender, EventArgs e)
         {
-            if (dgvSpisokZakupok.DataSource != DBObject.Entites.Zakupka.ToList())
-            { dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.ToList();Starfall(); }
             // Создаём объект документа
             Word.Document doc = null;
             try
@@ -494,7 +492,7 @@ namespace Dip
             }
             catch
             {
-                MessageBox.Show("Ошибка!", "Что то пошло не так!");
+                MessageBox.Show("Что то пошло не так!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -506,7 +504,7 @@ namespace Dip
             }
             catch
             {
-                MessageBox.Show("Ошибка!", "Что то пошло не так!");
+                MessageBox.Show("Некорректные данные в таблице!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         //Кнопка обновить
@@ -520,6 +518,7 @@ namespace Dip
                 Starfall();
                 cmbKalendarniyGod.Text = "";
                 cmbKafedra.Text = "";
+                startToolStripButton.Enabled = true;
 
             }
             catch
@@ -545,6 +544,7 @@ namespace Dip
 
         private void cmbAllSelect_TextChanged_1(object sender, EventArgs e)
         {
+            startToolStripButton.Enabled = false;
             if (cmbAllSelect.Text == "Kafedra_Jurnal")
             {
                 dgvSpisokZakupok.DataSource = DBObject.Entites.Kafedra_Jurnal.ToList();
