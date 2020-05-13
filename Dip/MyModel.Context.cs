@@ -12,6 +12,8 @@ namespace Dip
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class MyEntities : DbContext
     {
@@ -33,7 +35,13 @@ namespace Dip
         public virtual DbSet<Kvr_Jurnal> Kvr_Jurnal { get; set; }
         public virtual DbSet<Sroc_zakupki> Sroc_zakupki { get; set; }
         public virtual DbSet<Sroc_zakupki_Jurnal> Sroc_zakupki_Jurnal { get; set; }
+        public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Zakupka> Zakupka { get; set; }
         public virtual DbSet<Zakupka_Jurnal> Zakupka_Jurnal { get; set; }
+    
+        public virtual ObjectResult<string> RoleUser()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("RoleUser");
+        }
     }
 }

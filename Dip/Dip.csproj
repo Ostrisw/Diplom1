@@ -118,6 +118,9 @@
     <Compile Include="Sroc_zakupki_Jurnal.cs">
       <DependentUpon>MyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>MyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Zakupka.cs">
       <DependentUpon>MyModel.tt</DependentUpon>
     </Compile>
@@ -175,6 +178,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\3233.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="MyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MyModel.edmx</DependentUpon>
@@ -185,7 +191,6 @@
       <DependentUpon>MyModel.edmx</DependentUpon>
       <LastGenOutput>MyModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\3233.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

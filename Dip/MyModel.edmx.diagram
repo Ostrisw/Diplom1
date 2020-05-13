@@ -4,17 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c7ec7923e81848b681ac74097bab909a" Name="Diagram1">
-        <EntityTypeShape EntityType="MyModel.Kafedra" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyModel.Kafedra_Jurnal" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyModel.Kbk" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyModel.Kbk_Jurnal" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyModel.Kvr" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyModel.Kvr_Jurnal" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyModel.Sroc_zakupki" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyModel.Sroc_zakupki_Jurnal" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyModel.Zakupka" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyModel.Zakupka_Jurnal" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+      <Diagram DiagramId="71aab05634854b9493b7e646436c7e3d" Name="Diagram1">
+        <EntityTypeShape EntityType="MyModel.Kafedra" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kafedra_Jurnal" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kbk" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kbk_Jurnal" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kvr" Width="1.5" PointX="3.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Kvr_Jurnal" Width="1.5" PointX="5.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Sroc_zakupki" Width="1.5" PointX="3.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Sroc_zakupki_Jurnal" Width="1.5" PointX="7.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.User" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Zakupka" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyModel.Zakupka_Jurnal" Width="1.5" PointX="8.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="MyModel.FK__User__Kafedra__1387E197" ManuallyRouted="false" />
         <AssociationConnector Association="MyModel.FK__Zakupka__Kafedra__7132C993" ManuallyRouted="false" />
         <AssociationConnector Association="MyModel.FK__Zakupka__KBK__6E565CE8" ManuallyRouted="false" />
         <AssociationConnector Association="MyModel.FK__Zakupka__KVR__6F4A8121" ManuallyRouted="false" />

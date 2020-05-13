@@ -56,6 +56,7 @@
             this.F2_cmbBoxSrokZakupki = new System.Windows.Forms.ComboBox();
             this.dgvKafedra = new System.Windows.Forms.DataGridView();
             this.F2_TxtBoxKafedra = new System.Windows.Forms.TextBox();
+            this.F2_cmbPoiskUsera = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownTotalSum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownSum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKafedra)).BeginInit();
@@ -358,11 +359,22 @@
             this.F2_TxtBoxKafedra.TextChanged += new System.EventHandler(this.F2_TxtBoxKafedra_TextChanged);
             this.F2_TxtBoxKafedra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.F2_TxtBoxKafedra_KeyPress);
             // 
+            // F2_cmbPoiskUsera
+            // 
+            this.F2_cmbPoiskUsera.Enabled = false;
+            this.F2_cmbPoiskUsera.FormattingEnabled = true;
+            this.F2_cmbPoiskUsera.Location = new System.Drawing.Point(284, 151);
+            this.F2_cmbPoiskUsera.Name = "F2_cmbPoiskUsera";
+            this.F2_cmbPoiskUsera.Size = new System.Drawing.Size(121, 21);
+            this.F2_cmbPoiskUsera.TabIndex = 38;
+            this.F2_cmbPoiskUsera.Visible = false;
+            // 
             // FormAddAndEditZakupka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 489);
+            this.Controls.Add(this.F2_cmbPoiskUsera);
             this.Controls.Add(this.F2_TxtBoxKafedra);
             this.Controls.Add(this.dgvKafedra);
             this.Controls.Add(this.F2_cmbBoxSrokZakupki);
@@ -431,5 +443,6 @@
         private System.Windows.Forms.ComboBox F2_cmbBoxSrokZakupki;
         private System.Windows.Forms.DataGridView dgvKafedra;
         private System.Windows.Forms.TextBox F2_TxtBoxKafedra;
+        private System.Windows.Forms.ComboBox F2_cmbPoiskUsera;
     }
 }

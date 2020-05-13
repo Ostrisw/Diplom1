@@ -20,14 +20,14 @@ namespace Dip
             InitializeComponent();
             cmbAllSelect.Visible = false;
             lblJurnal.Visible = false;
-            string p = SystemInformation.UserName;
-            string s = Environment.MachineName;
-            string n = s + "/" + p;
-            if (n == "DESKTOP-19IDELH/Ser")
+            //Проверка на администратора
+            cmbPoiskUsera.DataSource = DBObject.Entites.RoleUser();
+            if (cmbPoiskUsera.Text == "db_owner")
             {
                 cmbAllSelect.Visible = true;
                 lblJurnal.Visible = true;
             }
+
             //Для комбобоксов отрисовка содержимого из БД
             cmbKafedra.DataSource = DBObject.Entites.Kafedra.ToList().Select(c => c.Name).Distinct().ToList();
             cmbKalendarniyGod.DataSource = DBObject.Entites.Zakupka.ToList().Select(c => c.God_zakupki).Distinct().ToList();
@@ -471,9 +471,9 @@ namespace Dip
         {
             try
             {
-                Zakupka zakupka = (Zakupka)dgvSpisokZakupok.Rows[e.RowIndex].DataBoundItem;
-                FormAddAndEditZakupka form = new FormAddAndEditZakupka(zakupka);
-                form.ShowDialog();
+                    Zakupka zakupka = (Zakupka)dgvSpisokZakupok.Rows[e.RowIndex].DataBoundItem;
+                    FormAddAndEditZakupka form = new FormAddAndEditZakupka(zakupka);
+                    form.ShowDialog();
             }
             catch
             {
@@ -529,21 +529,35 @@ namespace Dip
 
         private void cmbKalendarniyGod_TextChanged(object sender, EventArgs e)
         {
+            startToolStripButton.Enabled = true;
             if (cmbKalendarniyGod.Text != "")
             {
-                dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.God_zakupki.ToString() == cmbKalendarniyGod.Text).ToList();
+                cmbAllSelect.Text = "";
+                if (cmbKafedra.Text != "")
+                {
+                    dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.God_zakupki.ToString() == cmbKalendarniyGod.Text && c.Kafedra.ToString() == cmbKafedra.Text).ToList();
+                }
+                else { dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.God_zakupki.ToString() == cmbKalendarniyGod.Text).ToList(); Starfall(); }
             }
         }
         private void cmbKafedra_TextChanged(object sender, EventArgs e)
         {
+            startToolStripButton.Enabled = true;
             if (cmbKafedra.Text != "")
             {
-                dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.Kafedra.ToString() == cmbKafedra.Text).ToList();
+                cmbAllSelect.Text = "";
+                if (cmbKalendarniyGod.Text != "")
+                {
+                    dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.God_zakupki.ToString() == cmbKalendarniyGod.Text && c.Kafedra.ToString() == cmbKafedra.Text).ToList();
+                }
+                else { dgvSpisokZakupok.DataSource = DBObject.Entites.Zakupka.Where(c => c.Kafedra.ToString() == cmbKafedra.Text).ToList(); Starfall(); }
             }
         }
 
         private void cmbAllSelect_TextChanged_1(object sender, EventArgs e)
         {
+            cmbKafedra.Text = "";
+            cmbKalendarniyGod.Text = "";
             startToolStripButton.Enabled = false;
             if (cmbAllSelect.Text == "Kafedra_Jurnal")
             {

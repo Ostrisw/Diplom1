@@ -52,6 +52,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cmbAllSelect = new System.Windows.Forms.ComboBox();
             this.lblJurnal = new System.Windows.Forms.Label();
+            this.cmbPoiskUsera = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpisokZakupok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipDataSet)).BeginInit();
@@ -254,6 +255,16 @@
             this.lblJurnal.TabIndex = 31;
             this.lblJurnal.Text = "Журнал:";
             // 
+            // cmbPoiskUsera
+            // 
+            this.cmbPoiskUsera.Enabled = false;
+            this.cmbPoiskUsera.FormattingEnabled = true;
+            this.cmbPoiskUsera.Location = new System.Drawing.Point(1025, 49);
+            this.cmbPoiskUsera.Name = "cmbPoiskUsera";
+            this.cmbPoiskUsera.Size = new System.Drawing.Size(121, 21);
+            this.cmbPoiskUsera.TabIndex = 32;
+            this.cmbPoiskUsera.Visible = false;
+            // 
             // Glavnayaform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +272,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1213, 523);
+            this.Controls.Add(this.cmbPoiskUsera);
             this.Controls.Add(this.lblJurnal);
             this.Controls.Add(this.cmbAllSelect);
             this.Controls.Add(this.toolStripMenu);
@@ -306,6 +318,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ComboBox cmbAllSelect;
         private System.Windows.Forms.Label lblJurnal;
+        private System.Windows.Forms.ComboBox cmbPoiskUsera;
     }
 }
 

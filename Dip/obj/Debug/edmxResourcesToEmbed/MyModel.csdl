@@ -5,6 +5,7 @@
       <PropertyRef Name="Name" />
     </Key>
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__User__Kafedra__1387E197" FromRole="Kafedra" ToRole="User" />
     <NavigationProperty Name="Zakupka" Relationship="Self.FK__Zakupka__Kafedra__7132C993" FromRole="Kafedra" ToRole="Zakupka" />
   </EntityType>
   <EntityType Name="Kafedra_Jurnal">
@@ -72,6 +73,14 @@
     <Property Name="TimeChange" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="KtoIzmenil" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Kafedra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Kafedra1" Relationship="Self.FK__User__Kafedra__1387E197" FromRole="User" ToRole="Kafedra" />
+  </EntityType>
   <EntityType Name="Zakupka">
     <Key>
       <PropertyRef Name="Id" />
@@ -114,6 +123,18 @@
     <Property Name="TimeChange" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="KtoIzmenil" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
+  <Association Name="FK__User__Kafedra__1387E197">
+    <End Role="Kafedra" Type="Self.Kafedra" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kafedra">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Kafedra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Zakupka__Kafedra__7132C993">
     <End Role="Kafedra" Type="Self.Kafedra" Multiplicity="1" />
     <End Role="Zakupka" Type="Self.Zakupka" Multiplicity="*" />
@@ -171,8 +192,13 @@
     <EntitySet Name="Kvr_Jurnal" EntityType="Self.Kvr_Jurnal" />
     <EntitySet Name="Sroc_zakupki" EntityType="Self.Sroc_zakupki" />
     <EntitySet Name="Sroc_zakupki_Jurnal" EntityType="Self.Sroc_zakupki_Jurnal" />
+    <EntitySet Name="User" EntityType="Self.User" />
     <EntitySet Name="Zakupka" EntityType="Self.Zakupka" />
     <EntitySet Name="Zakupka_Jurnal" EntityType="Self.Zakupka_Jurnal" />
+    <AssociationSet Name="FK__User__Kafedra__1387E197" Association="Self.FK__User__Kafedra__1387E197">
+      <End Role="Kafedra" EntitySet="Kafedra" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
     <AssociationSet Name="FK__Zakupka__Kafedra__7132C993" Association="Self.FK__Zakupka__Kafedra__7132C993">
       <End Role="Kafedra" EntitySet="Kafedra" />
       <End Role="Zakupka" EntitySet="Zakupka" />
@@ -189,5 +215,6 @@
       <End Role="Sroc_zakupki" EntitySet="Sroc_zakupki" />
       <End Role="Zakupka" EntitySet="Zakupka" />
     </AssociationSet>
+    <FunctionImport Name="RoleUser" ReturnType="Collection(String)" />
   </EntityContainer>
 </Schema>

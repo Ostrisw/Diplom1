@@ -27,6 +27,24 @@ namespace Dip
             }
             Fill();
         }
+        
+        public void Zapret()
+        {
+            //запрет редактировать поля
+            F2_TxtBoxName.ReadOnly = true;
+
+            F2_cmbBoxKBK.Enabled = false;
+            F2_cmbBoxKVR.Enabled = false;
+            F2_NumUpDownTotalSum.Enabled = false;
+            F2_NumUpDownSum.Enabled = false;
+
+            F2_TxtBoxRashifrovkaRashodov.ReadOnly = true;
+            F2_TxtBoxMinTrebovaniya.ReadOnly = true;
+            F2_TxtBoxKolvoEdinic.ReadOnly = true;
+            F2_cmbBoxSrokZakupki.Enabled = false;
+            F2_cmbBoxGodZakupki.Enabled = false;
+            F2_TxtBoxKafedra.ReadOnly = true;
+        }
 
         private void Fill()
         {
@@ -56,21 +74,32 @@ namespace Dip
                 F2_delbtn.Visible = false;
 
                 //запрет редактировать поля
-                F2_TxtBoxName.ReadOnly = true;
-
-                F2_cmbBoxKBK.Enabled = false;
-                F2_cmbBoxKVR.Enabled = false;
-                F2_NumUpDownTotalSum.Enabled = false;
-                F2_NumUpDownSum.Enabled = false;
-
-                F2_TxtBoxRashifrovkaRashodov.ReadOnly = true;
-                F2_TxtBoxMinTrebovaniya.ReadOnly = true;
-                F2_TxtBoxKolvoEdinic.ReadOnly = true;
-                F2_cmbBoxSrokZakupki.Enabled = false;
-                F2_cmbBoxGodZakupki.Enabled = false;
-                F2_TxtBoxKafedra.ReadOnly = true;
+                Zapret();
             }
-                //F2_cmbBoxKafedra.DataSource = DBObject.Entites.Kafedra.ToList().Select(c => c.Name).Distinct().ToList();
+            //Проверка на администратора
+            F2_cmbPoiskUsera.DataSource = DBObject.Entites.RoleUser();
+            if (F2_cmbPoiskUsera.Text == "db_owner")
+            {
+            }
+            else
+            {
+                //Если редактирование (ищем совпадение в кафедре, если не совпадает - запрет), если добавление - ничего не трогаем 
+                if (F2_TxtBoxName.Text != "")
+                {
+                    string p = SystemInformation.UserName;
+                    if (DBObject.Entites.User.Where(u => p == u.Login && F2_TxtBoxKafedra.Text == u.Kafedra).Count() > 0)
+                    { }
+                    else
+                    {
+                        Zapret();
+                        F2_savebtn.Visible = false;
+                        F2_savebtn.Visible = false;
+                        F2_delbtn.Visible = false;
+                    }
+                }
+                else { }
+            }
+            //F2_cmbBoxKafedra.DataSource = DBObject.Entites.Kafedra.ToList().Select(c => c.Name).Distinct().ToList();
         }
 
         private void F2_delbtn_Click(object sender, EventArgs e)
@@ -172,6 +201,7 @@ namespace Dip
                 dgvKafedra.DataSource = DBObject.Entites.Kafedra.Where(c => c.Name.ToString() == F2_TxtBoxKafedra.Text).ToList();
             }
             dgvKafedra.Columns["Zakupka"].Visible = false;
+            dgvKafedra.Columns["User"].Visible = false;
             dgvKafedra.Columns["Name"].HeaderText = "Кафедра:";
         }
 
