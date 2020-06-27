@@ -121,16 +121,37 @@ namespace Dip
                 if (F2_NumUpDownTotalSum.Value != F2_NumUpDownSum.Value) { MessageBox.Show("Поля <Сумма> и <Сумма итого> должны быть одинаковы!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 else
                 {
-                    try
+                    if (F2_cmbPoiskUsera.Text == "db_owner")
                     {
-                        if (DBObject.Entites.Zakupka.Where(t => t.Id == MyZakupka.Id).Count() == 0)
+                        try
                         {
-                            DBObject.Entites.Zakupka.Add(MyZakupka);
-                            DBObject.Entites.SaveChanges();
+                            if (DBObject.Entites.Zakupka.Where(t => t.Id == MyZakupka.Id).Count() == 0)
+                            {
+                                DBObject.Entites.Zakupka.Add(MyZakupka);
+                                DBObject.Entites.SaveChanges();
+                            }
+                            Close();
                         }
-                        Close();
+                        catch { MessageBox.Show("Некорректные данные! Заполните все строки!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                     }
-                    catch { MessageBox.Show("Некорректные данные! Заполните все строки!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                    else
+                    {
+                        string g = SystemInformation.UserName;
+                        if (DBObject.Entites.User.Where(u => g == u.Login && F2_TxtBoxKafedra.Text == u.Kafedra).Count() == 0) { MessageBox.Show("Введите свою кафедру!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                        else
+                        {
+                            try
+                            {
+                                if (DBObject.Entites.Zakupka.Where(t => t.Id == MyZakupka.Id).Count() == 0)
+                                {
+                                    DBObject.Entites.Zakupka.Add(MyZakupka);
+                                    DBObject.Entites.SaveChanges();
+                                }
+                                Close();
+                            }
+                            catch { MessageBox.Show("Некорректные данные! Заполните все строки!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                        }
+                    }
                 }
             }
         }

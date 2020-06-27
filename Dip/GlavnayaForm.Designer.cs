@@ -142,7 +142,7 @@
             this.addToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.addToolStripButton.Text = "&Создать";
             this.addToolStripButton.ToolTipText = "Добавить";
-            this.addToolStripButton.Click += new System.EventHandler(this.создатьToolStripButton_Click);
+            this.addToolStripButton.Click += new System.EventHandler(this.addToolStripButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -162,7 +162,7 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.saveToolStripButton.Text = "&Сохранить в БД";
-            this.saveToolStripButton.Click += new System.EventHandler(this.сохранитьToolStripButton_Click);
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // toolStripSeparator3
             // 
@@ -284,7 +284,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Glavnayaform";
             this.Text = "Список закупок";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpisokZakupok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipDataSet)).EndInit();

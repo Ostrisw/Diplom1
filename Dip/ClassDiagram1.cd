@@ -1,24 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Dip.FormAddAndEditZakupka">
-    <Position X="10" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EAAAHQJgkCpCQAQBIAODADACAKAIKMCAwgAAAAhAAoQ=</HashCode>
-      <FileName>FormAddAndEditZakupka.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Dip.DBObject">
     <Position X="11.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
       <FileName>DBObject.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dip.Glavnayaform">
-    <Position X="8" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AYBAAv0ACyAAgkCAEACAYAACAIAAIAAAABQAAAQxAAQ=</HashCode>
-      <FileName>GlavnayaForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dip.MyEntities">
@@ -103,6 +89,20 @@
     <TypeIdentifier>
       <HashCode>gACCAAAAIAAAAAAAABAAAAQAAAAACAAIQCAAAgmEACA=</HashCode>
       <FileName>Zakupka_Jurnal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.FormAddAndEditZakupka">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAHQJgkCpCQAQBIAODADACAKAIKMCAwgAAAAhAAoQ=</HashCode>
+      <FileName>FormAddAndEditZakupka.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Glavnayaform">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYBAAv0ACyAAgkCAEACAYAACAIAAIAAAABAAAAQxAAQ=</HashCode>
+      <FileName>GlavnayaForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
