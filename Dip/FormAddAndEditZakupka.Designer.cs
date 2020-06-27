@@ -46,7 +46,6 @@
             this.F2_TxtBoxKolvoEdinic = new System.Windows.Forms.TextBox();
             this.F2_lblGodZakupki = new System.Windows.Forms.Label();
             this.F2_lblKafedra = new System.Windows.Forms.Label();
-            this.F2_TxtBoxKafedra = new System.Windows.Forms.TextBox();
             this.F2_NumUpDownTotalSum = new System.Windows.Forms.NumericUpDown();
             this.F2_NumUpDownSum = new System.Windows.Forms.NumericUpDown();
             this.F2_cmbBoxGodZakupki = new System.Windows.Forms.ComboBox();
@@ -55,9 +54,12 @@
             this.F2_cmbBoxKBK = new System.Windows.Forms.ComboBox();
             this.F2_cmbBoxKVR = new System.Windows.Forms.ComboBox();
             this.F2_cmbBoxSrokZakupki = new System.Windows.Forms.ComboBox();
-            this.F2_btnOpenDgv = new System.Windows.Forms.Button();
+            this.dgvKafedra = new System.Windows.Forms.DataGridView();
+            this.F2_TxtBoxKafedra = new System.Windows.Forms.TextBox();
+            this.F2_cmbPoiskUsera = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownTotalSum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownSum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKafedra)).BeginInit();
             this.SuspendLayout();
             // 
             // F2_closebtn
@@ -225,14 +227,6 @@
             this.F2_lblKafedra.TabIndex = 22;
             this.F2_lblKafedra.Text = "Кафедра";
             // 
-            // F2_TxtBoxKafedra
-            // 
-            this.F2_TxtBoxKafedra.Location = new System.Drawing.Point(139, 419);
-            this.F2_TxtBoxKafedra.Name = "F2_TxtBoxKafedra";
-            this.F2_TxtBoxKafedra.Size = new System.Drawing.Size(139, 20);
-            this.F2_TxtBoxKafedra.TabIndex = 24;
-            this.F2_TxtBoxKafedra.TextChanged += new System.EventHandler(this.F2_TxtBoxKafedra_TextChanged);
-            // 
             // F2_NumUpDownTotalSum
             // 
             this.F2_NumUpDownTotalSum.Location = new System.Drawing.Point(158, 152);
@@ -263,6 +257,7 @@
             // 
             this.F2_cmbBoxGodZakupki.FormattingEnabled = true;
             this.F2_cmbBoxGodZakupki.Items.AddRange(new object[] {
+            "2019",
             "2020",
             "2021",
             "2022",
@@ -273,7 +268,7 @@
             this.F2_cmbBoxGodZakupki.Name = "F2_cmbBoxGodZakupki";
             this.F2_cmbBoxGodZakupki.Size = new System.Drawing.Size(139, 21);
             this.F2_cmbBoxGodZakupki.TabIndex = 29;
-            this.F2_cmbBoxGodZakupki.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.F2_cmbBoxGodZakupki.SelectedIndexChanged += new System.EventHandler(this.F2_cmbBoxGodZakupki_SelectedIndexChanged);
             // 
             // lblInfoKbk
             // 
@@ -323,6 +318,7 @@
             // 
             // F2_cmbBoxSrokZakupki
             // 
+            this.F2_cmbBoxSrokZakupki.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.F2_cmbBoxSrokZakupki.FormattingEnabled = true;
             this.F2_cmbBoxSrokZakupki.Items.AddRange(new object[] {
             "Январь",
@@ -344,22 +340,43 @@
             this.F2_cmbBoxSrokZakupki.TabIndex = 34;
             this.F2_cmbBoxSrokZakupki.SelectedIndexChanged += new System.EventHandler(this.F2_cmbBoxSrokZakupki_SelectedIndexChanged);
             // 
-            // F2_btnOpenDgv
+            // dgvKafedra
             // 
-            this.F2_btnOpenDgv.Location = new System.Drawing.Point(277, 418);
-            this.F2_btnOpenDgv.Name = "F2_btnOpenDgv";
-            this.F2_btnOpenDgv.Size = new System.Drawing.Size(26, 21);
-            this.F2_btnOpenDgv.TabIndex = 35;
-            this.F2_btnOpenDgv.Text = "...";
-            this.F2_btnOpenDgv.UseVisualStyleBackColor = true;
-            this.F2_btnOpenDgv.Click += new System.EventHandler(this.F2_btnOpenDgv_Click);
+            this.dgvKafedra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKafedra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKafedra.Location = new System.Drawing.Point(298, 392);
+            this.dgvKafedra.Name = "dgvKafedra";
+            this.dgvKafedra.ReadOnly = true;
+            this.dgvKafedra.Size = new System.Drawing.Size(198, 50);
+            this.dgvKafedra.TabIndex = 36;
+            // 
+            // F2_TxtBoxKafedra
+            // 
+            this.F2_TxtBoxKafedra.Location = new System.Drawing.Point(138, 422);
+            this.F2_TxtBoxKafedra.Name = "F2_TxtBoxKafedra";
+            this.F2_TxtBoxKafedra.Size = new System.Drawing.Size(140, 20);
+            this.F2_TxtBoxKafedra.TabIndex = 37;
+            this.F2_TxtBoxKafedra.TextChanged += new System.EventHandler(this.F2_TxtBoxKafedra_TextChanged);
+            this.F2_TxtBoxKafedra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.F2_TxtBoxKafedra_KeyPress);
+            // 
+            // F2_cmbPoiskUsera
+            // 
+            this.F2_cmbPoiskUsera.Enabled = false;
+            this.F2_cmbPoiskUsera.FormattingEnabled = true;
+            this.F2_cmbPoiskUsera.Location = new System.Drawing.Point(284, 151);
+            this.F2_cmbPoiskUsera.Name = "F2_cmbPoiskUsera";
+            this.F2_cmbPoiskUsera.Size = new System.Drawing.Size(121, 21);
+            this.F2_cmbPoiskUsera.TabIndex = 38;
+            this.F2_cmbPoiskUsera.Visible = false;
             // 
             // FormAddAndEditZakupka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 489);
-            this.Controls.Add(this.F2_btnOpenDgv);
+            this.Controls.Add(this.F2_cmbPoiskUsera);
+            this.Controls.Add(this.F2_TxtBoxKafedra);
+            this.Controls.Add(this.dgvKafedra);
             this.Controls.Add(this.F2_cmbBoxSrokZakupki);
             this.Controls.Add(this.F2_cmbBoxKVR);
             this.Controls.Add(this.F2_cmbBoxKBK);
@@ -368,7 +385,6 @@
             this.Controls.Add(this.F2_cmbBoxGodZakupki);
             this.Controls.Add(this.F2_NumUpDownSum);
             this.Controls.Add(this.F2_NumUpDownTotalSum);
-            this.Controls.Add(this.F2_TxtBoxKafedra);
             this.Controls.Add(this.F2_lblKafedra);
             this.Controls.Add(this.F2_lblGodZakupki);
             this.Controls.Add(this.F2_TxtBoxKolvoEdinic);
@@ -388,9 +404,10 @@
             this.Controls.Add(this.F2_delbtn);
             this.Controls.Add(this.F2_closebtn);
             this.Name = "FormAddAndEditZakupka";
-            this.Text = "FormAddAndEditZakupka";
+            this.Text = "Добавление и редактирование";
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownTotalSum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.F2_NumUpDownSum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKafedra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,7 +433,6 @@
         private System.Windows.Forms.TextBox F2_TxtBoxKolvoEdinic;
         private System.Windows.Forms.Label F2_lblGodZakupki;
         private System.Windows.Forms.Label F2_lblKafedra;
-        private System.Windows.Forms.TextBox F2_TxtBoxKafedra;
         private System.Windows.Forms.NumericUpDown F2_NumUpDownTotalSum;
         private System.Windows.Forms.NumericUpDown F2_NumUpDownSum;
         private System.Windows.Forms.ComboBox F2_cmbBoxGodZakupki;
@@ -425,6 +441,8 @@
         private System.Windows.Forms.ComboBox F2_cmbBoxKBK;
         private System.Windows.Forms.ComboBox F2_cmbBoxKVR;
         private System.Windows.Forms.ComboBox F2_cmbBoxSrokZakupki;
-        private System.Windows.Forms.Button F2_btnOpenDgv;
+        private System.Windows.Forms.DataGridView dgvKafedra;
+        private System.Windows.Forms.TextBox F2_TxtBoxKafedra;
+        private System.Windows.Forms.ComboBox F2_cmbPoiskUsera;
     }
 }

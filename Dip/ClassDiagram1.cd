@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Dip.DBObject">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DBObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.MyEntities">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAAQAAEAIAAAAAAASAAAAEAAAAAAAAAAIAQAEAgE=</HashCode>
+      <FileName>MyModel.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Kafedra">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Kafedra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Kafedra_Jurnal">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Kafedra_Jurnal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Kbk">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgA=</HashCode>
+      <FileName>Kbk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Kbk_Jurnal">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEAAA=</HashCode>
+      <FileName>Kbk_Jurnal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Kvr">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgA=</HashCode>
+      <FileName>Kvr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Kvr_Jurnal">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACBAAAIAAAAAAAAAAAAAAAAAAAAAAAAAACAAgAAAA=</HashCode>
+      <FileName>Kvr_Jurnal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Sroc_zakupki">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Sroc_zakupki.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Sroc_zakupki_Jurnal">
+    <Position X="2.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Sroc_zakupki_Jurnal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.User">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEAIA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Zakupka">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAQAAAAAAAAAABAQAAQAAAAACAAIACAAAgGEAKA=</HashCode>
+      <FileName>Zakupka.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Zakupka_Jurnal">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gACCAAAAIAAAAAAAABAAAAQAAAAACAAIQCAAAgmEACA=</HashCode>
+      <FileName>Zakupka_Jurnal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.FormAddAndEditZakupka">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAHQJgkCpCQAQBIAODADACAKAIKMCAwgAAAAhAAoQ=</HashCode>
+      <FileName>FormAddAndEditZakupka.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dip.Glavnayaform">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYBAAv0ACyAAgkCAEACAYAACAIAAIAAAABAAAAQxAAQ=</HashCode>
+      <FileName>GlavnayaForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

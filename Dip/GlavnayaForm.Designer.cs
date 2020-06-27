@@ -36,8 +36,8 @@
             this.reportTableAdapter = new Dip.DipDataSetTableAdapters.ReportTableAdapter();
             this.cmbKafedra = new System.Windows.Forms.ComboBox();
             this.cmbKalendarniyGod = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblKafedra = new System.Windows.Forms.Label();
+            this.lblKalendarniyGod = new System.Windows.Forms.Label();
             this.addToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -50,6 +50,9 @@
             this.startToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.cmbAllSelect = new System.Windows.Forms.ComboBox();
+            this.lblJurnal = new System.Windows.Forms.Label();
+            this.cmbPoiskUsera = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpisokZakupok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipDataSet)).BeginInit();
@@ -110,23 +113,23 @@
             this.cmbKalendarniyGod.TabIndex = 26;
             this.cmbKalendarniyGod.TextChanged += new System.EventHandler(this.cmbKalendarniyGod_TextChanged);
             // 
-            // label9
+            // lblKafedra
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(563, 52);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Кафедра:";
+            this.lblKafedra.AutoSize = true;
+            this.lblKafedra.Location = new System.Drawing.Point(563, 52);
+            this.lblKafedra.Name = "lblKafedra";
+            this.lblKafedra.Size = new System.Drawing.Size(55, 13);
+            this.lblKafedra.TabIndex = 27;
+            this.lblKafedra.Text = "Кафедра:";
             // 
-            // label10
+            // lblKalendarniyGod
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(304, 52);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Календарный год:";
+            this.lblKalendarniyGod.AutoSize = true;
+            this.lblKalendarniyGod.Location = new System.Drawing.Point(304, 52);
+            this.lblKalendarniyGod.Name = "lblKalendarniyGod";
+            this.lblKalendarniyGod.Size = new System.Drawing.Size(99, 13);
+            this.lblKalendarniyGod.TabIndex = 28;
+            this.lblKalendarniyGod.Text = "Календарный год:";
             // 
             // addToolStripButton
             // 
@@ -139,7 +142,7 @@
             this.addToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.addToolStripButton.Text = "&Создать";
             this.addToolStripButton.ToolTipText = "Добавить";
-            this.addToolStripButton.Click += new System.EventHandler(this.создатьToolStripButton_Click);
+            this.addToolStripButton.Click += new System.EventHandler(this.addToolStripButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -158,8 +161,8 @@
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(24, 24);
-            this.saveToolStripButton.Text = "&Сохранить";
-            this.saveToolStripButton.Click += new System.EventHandler(this.сохранитьToolStripButton_Click);
+            this.saveToolStripButton.Text = "&Сохранить в БД";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // toolStripSeparator3
             // 
@@ -180,7 +183,7 @@
             this.UpdatetoolStripButton.Size = new System.Drawing.Size(24, 24);
             this.UpdatetoolStripButton.Text = "toolStripButton1";
             this.UpdatetoolStripButton.ToolTipText = "Обновить";
-            this.UpdatetoolStripButton.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.UpdatetoolStripButton.Click += new System.EventHandler(this.UpdatetoolStripButton1_Click);
             // 
             // toolStripSeparator6
             // 
@@ -228,6 +231,40 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // cmbAllSelect
+            // 
+            this.cmbAllSelect.FormattingEnabled = true;
+            this.cmbAllSelect.Items.AddRange(new object[] {
+            "Kafedra_Jurnal",
+            "Kbk_Jurnal",
+            "Kvr_Jurnal",
+            "Sroc_Zakupki_Jurnal",
+            "Zakupka_Jurnal"});
+            this.cmbAllSelect.Location = new System.Drawing.Point(1025, 49);
+            this.cmbAllSelect.Name = "cmbAllSelect";
+            this.cmbAllSelect.Size = new System.Drawing.Size(176, 21);
+            this.cmbAllSelect.TabIndex = 30;
+            this.cmbAllSelect.TextChanged += new System.EventHandler(this.cmbAllSelect_TextChanged_1);
+            // 
+            // lblJurnal
+            // 
+            this.lblJurnal.AutoSize = true;
+            this.lblJurnal.Location = new System.Drawing.Point(969, 52);
+            this.lblJurnal.Name = "lblJurnal";
+            this.lblJurnal.Size = new System.Drawing.Size(50, 13);
+            this.lblJurnal.TabIndex = 31;
+            this.lblJurnal.Text = "Журнал:";
+            // 
+            // cmbPoiskUsera
+            // 
+            this.cmbPoiskUsera.Enabled = false;
+            this.cmbPoiskUsera.FormattingEnabled = true;
+            this.cmbPoiskUsera.Location = new System.Drawing.Point(1025, 49);
+            this.cmbPoiskUsera.Name = "cmbPoiskUsera";
+            this.cmbPoiskUsera.Size = new System.Drawing.Size(121, 21);
+            this.cmbPoiskUsera.TabIndex = 32;
+            this.cmbPoiskUsera.Visible = false;
+            // 
             // Glavnayaform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,16 +272,18 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1213, 523);
+            this.Controls.Add(this.cmbPoiskUsera);
+            this.Controls.Add(this.lblJurnal);
+            this.Controls.Add(this.cmbAllSelect);
             this.Controls.Add(this.toolStripMenu);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblKalendarniyGod);
+            this.Controls.Add(this.lblKafedra);
             this.Controls.Add(this.cmbKalendarniyGod);
             this.Controls.Add(this.cmbKafedra);
             this.Controls.Add(this.dgvSpisokZakupok);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Glavnayaform";
             this.Text = "Список закупок";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpisokZakupok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipDataSet)).EndInit();
@@ -262,8 +301,8 @@
         private DipDataSetTableAdapters.ReportTableAdapter reportTableAdapter;
         private System.Windows.Forms.ComboBox cmbKafedra;
         private System.Windows.Forms.ComboBox cmbKalendarniyGod;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblKafedra;
+        private System.Windows.Forms.Label lblKalendarniyGod;
         private System.Windows.Forms.ToolStripButton addToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -276,6 +315,9 @@
         private System.Windows.Forms.ToolStripButton startToolStripButton;
         private System.Windows.Forms.ToolStrip toolStripMenu;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ComboBox cmbAllSelect;
+        private System.Windows.Forms.Label lblJurnal;
+        private System.Windows.Forms.ComboBox cmbPoiskUsera;
     }
 }
 

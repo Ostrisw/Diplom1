@@ -77,6 +77,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="MyModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Kafedra" ColumnName="Kafedra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Zakupka">
       <EntityTypeMapping TypeName="MyModel.Zakupka">
         <MappingFragment StoreEntitySet="Zakupka">
@@ -117,5 +125,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="RoleUser" FunctionName="Хранилище MyModel.RoleUser" />
   </EntityContainerMapping>
 </Mapping>

@@ -112,16 +112,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Select_Kafedra_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Select_Kafedra_Form.Designer.cs">
-      <DependentUpon>Select_Kafedra_Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sroc_zakupki.cs">
       <DependentUpon>MyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Sroc_zakupki_Jurnal.cs">
+      <DependentUpon>MyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
       <DependentUpon>MyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Zakupka.cs">
@@ -146,10 +143,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Select_Kafedra_Form.resx">
-      <DependentUpon>Select_Kafedra_Form.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="App.Config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="DipDataSet.xsc">
       <DependentUpon>DipDataSet.xsd</DependentUpon>
     </None>
@@ -183,6 +178,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\3233.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="MyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MyModel.edmx</DependentUpon>
@@ -193,7 +191,6 @@
       <DependentUpon>MyModel.edmx</DependentUpon>
       <LastGenOutput>MyModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\3233.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
